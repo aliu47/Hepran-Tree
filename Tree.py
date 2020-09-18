@@ -40,6 +40,7 @@ class Tree:
                     # if this parent has children check each child to see if it has grand children
                     oddLoop(self, sugar, n)
 
+        #This display is used to view children, depth, etc.
         def display(sugar):
             result = ""
             result = "parent: "+sugar.name+"\nchildren: "
@@ -52,7 +53,7 @@ class Tree:
             for child in sugar.children:
                 display(child)
 
-    
+        #This display is suppose to be used to view the structure *Not fully working
         def display2(sugar,result):
             # result = ""
             # result = "parent: "+sugar.name+"\nchildren: "
