@@ -14,25 +14,44 @@ class evenSugar:
     def GlcNAc(self):
         if(self.parent.name == "GlcA"):
             if(self.parent.parent):
-                if("6S" not in self.parent.parent):
-                    return True
+                if("6S" in self.parent.parent.name):
+                    return False
+            return True
         else:
             return False
 
     def GlcNAc6S(self):
         if(self.parent.name == "GlcA"):
+            if(self.parent.parent):
+                if(self.parent.parent == "GlcNS"):
+                    return False
             return True
         else:
             return False
 
     def GlcNS(self):
         if(self.parent.name == "GlcA" or self.parent.name == "GlcA2S" or self.parent.name == "IdoA" or self.parent.name == "IdoA2S"):
+            if(self.parent.parent):
+                if(self.parent.parent == "GlcNS"):
+                    return False
             return True
         else:
             return False
 
     def GlcNS6S(self):
         if(self.parent.name == "GlcA" or self.parent.name == "GlcA2S" or self.parent.name == "IdoA" or self.parent.name == "IdoA2S"):
+            if(self.parent.parent):
+                if(self.parent.parent == "GlcNS"):
+                    return False
+            return True
+        else:
+            return False
+
+    def GlcNS6S3S(self):
+        if(self.parent.name == "IdoA2S"):
+            if(self.parent.parent):
+                if(self.parent.parent == "GlcNS"):
+                    return False
             return True
         else:
             return False

@@ -58,18 +58,18 @@ class Tree:
             # result = ""
             # result = "parent: "+sugar.name+"\nchildren: "
             # print("depth: "+str(sugar.position))
-            if(sugar.position == 1):
-                result = sugar.name+" | "
+            if(len(sugar.children) == 0):
+                print(result)
 
             for child in sugar.children:
                 # append the child to the result
                 result = result + child.name+' | '
                 # call the function again for each child
-                display(child,result)
+                display2(child,result)
 
         a = oddSugar.oddSugar("GlcA", "odd", 1, None)
         evenLoop(self, a, 6)
-        display(a)
+        display2(a,a.name)
         # b = evenSugar.evenSugar("GlcNAc6S", "even", 0, None)
         # oddLoop(self, b, 5)
         # display(b)
